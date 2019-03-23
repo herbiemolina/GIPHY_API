@@ -31,3 +31,14 @@ function what() {
 
 what()
 
+function buttonPlease() {
+
+    var c = $("<button>");
+    $("#blank").append("<button>");
+};
+
+buttonPlease();
+
+$("#blank").append("<button>");\
+
+
