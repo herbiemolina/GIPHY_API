@@ -17,8 +17,7 @@ function renderbuttons() {
     }
 };
 
-renderbuttons()
-
+renderbuttons();
 
 $("body").on("click", "button", function() {
 
@@ -53,6 +52,21 @@ $("body").on("click", "button", function() {
 
 
         }
+
+        
     });
 
 });
+
+
+$("#add-giphy").on("click", function(event){
+    event.preventDefault();
+
+    var newGiphy = $("#giphy-input").val().trim();
+
+    topics.push(newGiphy);
+
+    renderbuttons();
+    console.log(topics)
+});
+
