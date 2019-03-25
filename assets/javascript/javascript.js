@@ -1,7 +1,4 @@
 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-   
-
 var topics = ["steak", "chicken", "pork", "lamb", "crab", "shrimp", "lobster"]
 
 function renderbuttons() {
@@ -22,23 +19,40 @@ function renderbuttons() {
 
 renderbuttons()
 
-function what() {
 
-    var b = $("<button>");
-    a.text("a button");
-    $("#buttons-view").append(b);
-};
+$("body").on("click", "button", function() {
 
-what()
+    var query = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+    query + "&api_key=dc6zaTOxFJmzC&limit=10";
 
-function buttonPlease() {
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    }).then(function(response) {
+        console.log(queryURL);
+        console.log(response);
 
-    var c = $("<button>");
-    $("#blank").append("<button>");
-};
+        var results = response.data;
 
-buttonPlease();
+        for (var i = 0; i, results.length; i++) {
 
-$("#blank").append("<button>");\
+            var giphydiv = $("<div>");
+
+            var p = $("<p>").text("rating: " + results[i].rating);
+
+            var giphyimage = $("<img>");
+
+            giphyimage.attr("src", results[i].images.fixed_height.url);
+
+            giphydiv.append(p);
+
+            giphydiv.append(giphyimage);
+
+            $("#giphy-view").prepend(giphydiv);
 
 
+        }
+    });
+
+});
