@@ -5,15 +5,23 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
    
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
-    
+
     <div class="container">
-        <h1>Giphy Search</h1>
+            <div class="jumbotron jumbotron-fluid">
+                    <div class="container">
+                      <h1 class="display-4">Giphy Search</h1>
+                      <p class="lead">Select a search term to search for gifs, or go ahead and make your own button!</p>
+                    </div>
+                  </div>
+        <h1>Find a Giphy in a Jiffy</h1>
 
         <!-- Button Dump  -->
+        <hr>
         <div id="buttons-view"></div>
-        
+        <hr>
         <!--User Imput-->
         <form id="giphy-form">
           <label for="giphy-input">Search for Giphy's</label>
@@ -23,7 +31,7 @@
           <!-- New Giphy Button -->
           <input id="add-giphy" type="submit" value="Add Your Giphy!">
         </form>
-
+        
         <!--Giphy Dump-->
         <div id="giphy-view"></div>
        

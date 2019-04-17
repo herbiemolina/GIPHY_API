@@ -7,7 +7,7 @@ function renderbuttons() {
 
     for ( var i = 0; i < topics.length; i++) {
 
-        var a = $("<button>");
+        var a = $("<button type='button' class='btn btn-primary' >");
 
         a.addClass("topics-btn");
         a.attr("data-name", topics[i]);
